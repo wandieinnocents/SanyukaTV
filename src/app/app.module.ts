@@ -6,6 +6,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { StreamingMedia } from '@ionic-native/streaming-media';
+
 
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -25,6 +27,11 @@ import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
 import { TabsPage } from '../pages/tabs-page/tabs-page';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { SupportPage } from '../pages/support/support';
+import { ShowPage } from '../pages/show/show';
+import { NewsPage } from '../pages/news/news';
+import { ProgramPage } from '../pages/program/program';
+import { StreamPage } from '../pages/stream/stream';
+import { StoryPage } from '../pages/story/story';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -46,7 +53,12 @@ import { UserData } from '../providers/user-data';
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage
+    SupportPage,
+    ShowPage,
+    NewsPage,
+    ProgramPage,
+    StreamPage,
+    StoryPage
   ],
   imports: [
     BrowserModule,
@@ -86,13 +98,19 @@ import { UserData } from '../providers/user-data';
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage
+    SupportPage,
+    ShowPage,
+    NewsPage,
+    ProgramPage,
+    StreamPage,
+    StoryPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ConferenceData,
     UserData,
     InAppBrowser,
+    StreamingMedia,
     SplashScreen
   ]
 })

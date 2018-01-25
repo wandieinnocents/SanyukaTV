@@ -5,16 +5,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Storage } from '@ionic/storage';
 
-import { AboutPage } from '../pages/about/about';
+// import { AboutPage } from '../pages/about/about';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
-import { MapPage } from '../pages/map/map';
+// import { MapPage } from '../pages/map/map';
 import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs-page/tabs-page';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { SchedulePage } from '../pages/schedule/schedule';
-import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
+import { ProgramPage } from '../pages/program/program';
+import { NewsPage } from '../pages/news/news';
+import { ShowPage } from '../pages/show/show';
+import { StoryPage } from '../pages/story/story';
+// import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
 import { SupportPage } from '../pages/support/support';
+import { WeatherPage } from '../pages/weather/weather';
+
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -42,11 +48,15 @@ export class ConferenceApp {
   // the left menu only works after login
   // the login page disables the left menu
   appPages: PageInterface[] = [
-    { title: 'Schedule', name: 'TabsPage', component: TabsPage, tabComponent: SchedulePage, index: 0, icon: 'calendar' },
-    { title: 'Speakers', name: 'TabsPage', component: TabsPage, tabComponent: SpeakerListPage, index: 1, icon: 'contacts' },
-    { title: 'Map', name: 'TabsPage', component: TabsPage, tabComponent: MapPage, index: 2, icon: 'map' },
-    { title: 'About', name: 'TabsPage', component: TabsPage, tabComponent: AboutPage, index: 3, icon: 'information-circle' }
+    { title: 'Home', name: 'TabsPage', component: TabsPage, tabComponent: SchedulePage, index: 0, icon: 'calendar' },
+    { title: 'Program Guide', name: 'TabsPage', component: TabsPage, tabComponent: ProgramPage, index: 1, icon: 'contacts' },
+    { title: 'News', name: 'TabsPage', component: TabsPage, tabComponent: NewsPage, index: 2, icon: 'map' },
+    { title: 'Shows', name: 'TabsPage', component: TabsPage, tabComponent: ShowPage, index: 3, icon: 'information-circle' },
+    { title: 'Stories', name: 'TabsPage', component: TabsPage, tabComponent: StoryPage, index: 4, icon: 'information-circle' },
+    { title: 'Weather', name: 'TabsPage', component: TabsPage, tabComponent: WeatherPage, index: 5, icon: 'information-circle' },
+    
   ];
+
   loggedInPages: PageInterface[] = [
     { title: 'Account', name: 'AccountPage', component: AccountPage, icon: 'person' },
     { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },

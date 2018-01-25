@@ -1,17 +1,12 @@
 <ion-header>
-  <ion-navbar no-border-bottom>
+  <ion-navbar no-border-bottom color="sanyuka">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
 
-    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>
+
+      <ion-title>Sanyuka TV</ion-title>
+
 
     <ion-buttons end>
       <button ion-button icon-only (click)="presentFilter()">
@@ -20,65 +15,48 @@
     </ion-buttons>
   </ion-navbar>
 
-  <ion-toolbar no-border-top>
-    <ion-searchbar color="primary"
-                   [(ngModel)]="queryText"
-                   (ionInput)="updateSchedule()"
-                   placeholder="Search">
-    </ion-searchbar>
-  </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
 
-  <ion-list #scheduleList [hidden]="shownSessions === 0">
+<!-- slides here-->
 
-    <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
+<ion-slides autoplay="5000" loop="true" speed="3000" pager>
+    <ion-slide >
+      <img src="assets/img/two.jpg" style="object-fit: cover; ">
+    </ion-slide>
+    <ion-slide >
+      <img src="assets/img/three.jpg" style="object-fit: cover; ">
+    </ion-slide>
+    <ion-slide >
+      <img src="assets/img/four.jpg" style="object-fit: cover; ">
+    </ion-slide>
+    <ion-slide >
+      <img src="assets/img/five.jpg" style="object-fit: cover; ">
+    </ion-slide>
+    <ion-slide >
+      <img src="assets/img/six.jpg" style="object-fit: cover; ">
+    </ion-slide>
+    <ion-slide >
+      <img src="assets/img/seven.jpg" style="object-fit: cover; ">
+    </ion-slide>
+    <ion-slide >
+      <img src="assets/img/eight.jpg" style="object-fit: cover; ">
+    </ion-slide>
+  </ion-slides>
 
-      <ion-item-divider sticky>
-        <ion-label>
-          {{group.time}}
-        </ion-label>
-      </ion-item-divider>
+<!-- end of slides-->
 
-      <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase" [hidden]="session.hide">
 
-        <button ion-item (click)="goToSessionDetail(session)">
-          <h3>{{session.name}}</h3>
-          <p>
-            {{session.timeStart}} &mdash;
-            {{session.timeEnd}}:
-            {{session.location}}
-          </p>
-        </button>
 
-        <ion-item-options>
-          <button ion-button color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
-            Favorite
-          </button>
-          <button ion-button color="danger" (click)="removeFavorite(slidingItem, session, 'Remove Favorite')" *ngIf="segment === 'favorites'">
-            Remove
-          </button>
-        </ion-item-options>
 
-      </ion-item-sliding>
 
-    </ion-item-group>
-
-  </ion-list>
-
-  <ion-list-header [hidden]="shownSessions > 0">
-      No Sessions Found
-  </ion-list-header>
 
   <ion-fab bottom right #fab>
     <button ion-fab><ion-icon name="share"></ion-icon></button>
     <ion-fab-list side="top">
-      <button ion-fab color="vimeo" (click)="openSocial('Vimeo', fab)"><ion-icon name="logo-vimeo"></ion-icon></button>
-      <button ion-fab color="google" (click)="openSocial('Google+', fab)"><ion-icon name="logo-googleplus"></ion-icon></button>
+
       <button ion-fab color="twitter" (click)="openSocial('Twitter', fab)"><ion-icon name="logo-twitter"></ion-icon></button>
       <button ion-fab color="facebook" (click)="openSocial('Facebook', fab)"><ion-icon name="logo-facebook"></ion-icon></button>
     </ion-fab-list>
@@ -86,3 +64,91 @@
 
 
 </ion-content>
+
+  <ion-footer>
+
+
+
+    <div text-center>
+
+      <ion-row>
+
+        <ion-col text-center>
+          <div (click)="openShows()">
+            <ion-icon name="people" item-left color="twitter" style="font-size:40px;"></ion-icon>
+            <p>Shows</p>
+
+
+          </div>
+        </ion-col>
+
+        <ion-col style="background-color:#fd9b1f;">
+          <br><br>
+          <div (click)="liveStream()">
+            <ion-icon name="desktop" item-left color="light" style="font-size:40px;"></ion-icon>
+          <!-- <i class="fa fa-address-book-o" aria-hidden="true"></i> -->
+            <p style="color:#ffffff">Live TV</p>
+
+
+          </div>
+        </ion-col>
+
+      </ion-row>
+
+        <ion-row>
+
+          <ion-col text-center>
+            <div (click)="openNews()">
+              <ion-icon name="logo-youtube" item-left color="danger" style="font-size:40px;"></ion-icon>
+              <p >News</p>
+
+
+            </div>
+          </ion-col>
+          <ion-col style="background-color:#fd9b1f;">
+            <div>
+
+              <!--
+              <ion-icon name="logo-youtube" item-left color="light" ></ion-icon>
+              <p style="color:#ffffff">Program</p> -->
+              <ion-row>
+                <ion-col (click)="openNews()">
+                <ion-icon name="share" item-left color="light" style="font-size:30px;"></ion-icon>
+                <p style="color:white;">Stories</p>
+                </ion-col>
+                <ion-col (click)="openNews()">
+                <ion-icon name="logo-youtube" item-left color="light" style="font-size:30px;"> </ion-icon>
+                <p style="color:white;">Weather</p>
+                </ion-col>
+              </ion-row>
+
+
+            </div>
+          </ion-col>
+
+        </ion-row>
+
+
+
+    </div>
+
+    <!-- <div text-center>
+      <ion-row>
+      <ion-col>
+        <ion-icon name="desktop" item-left color="secondary" style="font-size:20px;"></ion-icon>
+      </ion-col>
+      <ion-col>
+      <ion-icon name="share" item-left color="secondary" style="font-size:20px;"></ion-icon>
+      </ion-col>
+      <ion-col>
+      <ion-icon name="logo-youtube" item-left color="secondary" style="font-size:20px;"> </ion-icon>
+      </ion-col>
+    </ion-row>
+    </div> -->
+
+
+
+
+
+
+  </ion-footer>

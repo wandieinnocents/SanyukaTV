@@ -1,6 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 
 import { AlertController, App, FabContainer, ItemSliding, List, ModalController, NavController, ToastController, LoadingController, Refresher } from 'ionic-angular';
+import { ShowPage } from '../show/show';
+import { NewsPage } from '../news/news';
+import { ProgramPage } from '../program/program';
+import { StreamPage } from '../stream/stream';
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 
 /*
   To learn how to use third party libs in an
@@ -41,14 +46,50 @@ export class SchedulePage {
     public modalCtrl: ModalController,
     public navCtrl: NavController,
     public toastCtrl: ToastController,
+    private streamingMedia: StreamingMedia,
     public confData: ConferenceData,
     public user: UserData,
   ) {}
+  //streaming medaia here
+  liveStream(){
+  let options: StreamingVideoOptions = {
+       successCallback: () => { console.log('Finished Video') },
+       errorCallback: (e) => { console.log('Error: ', e) },
+       orientation: 'landscape'
+     };
 
+     // http://www.sample-videos.com/
+     // this.streamingMedia.playVideo('http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4', options);
+    this.streamingMedia.playVideo('rtsp://127.0.0.1:1935/live/myStream', options);
+
+
+   }
   ionViewDidLoad() {
     this.app.setTitle('Schedule');
     this.updateSchedule();
   }
+
+
+
+
+  //navigatio pages
+    openNews(){
+       this.navCtrl.push(NewsPage);
+    }
+
+    openStream(){
+       this.navCtrl.push(StreamPage);
+    }
+
+
+    openShows(){
+       this.navCtrl.push(ShowPage);
+    }
+
+    openPrograms()
+    {
+      this.navCtrl.push(ProgramPage);
+    }
 
   updateSchedule() {
     // Close any open sliding items when the schedule updates

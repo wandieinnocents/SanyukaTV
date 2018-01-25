@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 
 import { NavParams } from 'ionic-angular';
 
-import { AboutPage } from '../about/about';
-import { MapPage } from '../map/map';
+// import { AboutPage } from '../about/about';
+// import { MapPage } from '../map/map';
 import { SchedulePage } from '../schedule/schedule';
-import { SpeakerListPage } from '../speaker-list/speaker-list';
+import { ProgramPage } from '../program/program';
+import { NewsPage } from '../news/news';
+import { ShowPage } from '../show/show';
+import { StoryPage } from '../story/story';
 
 @Component({
   templateUrl: 'tabs-page.html'
@@ -13,9 +16,10 @@ import { SpeakerListPage } from '../speaker-list/speaker-list';
 export class TabsPage {
   // set the root pages for each tab
   tab1Root: any = SchedulePage;
-  tab2Root: any = SpeakerListPage;
-  tab3Root: any = MapPage;
-  tab4Root: any = AboutPage;
+  tab2Root: any = ProgramPage;
+  tab3Root: any = NewsPage;
+  tab4Root: any = ShowPage;
+  tab5Root: any = StoryPage;
   mySelectedIndex: number;
 
   constructor(navParams: NavParams) {

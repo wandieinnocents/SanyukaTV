@@ -8,11 +8,8 @@
       <ion-title>Sanyuka TV</ion-title>
 
 
-    <ion-buttons end>
-      <button ion-button icon-only (click)="presentFilter()">
-        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
-      </button>
-    </ion-buttons>
+
+
   </ion-navbar>
 
 
@@ -20,47 +17,46 @@
 
 <ion-content>
 
-<!-- slides here-->
-
-<ion-slides autoplay="5000" loop="true" speed="3000" pager>
-    <ion-slide >
-      <img src="assets/img/two.jpg" style="object-fit: cover; ">
-    </ion-slide>
-    <ion-slide >
-      <img src="assets/img/three.jpg" style="object-fit: cover; ">
-    </ion-slide>
-    <ion-slide >
-      <img src="assets/img/four.jpg" style="object-fit: cover; ">
-    </ion-slide>
-    <ion-slide >
-      <img src="assets/img/five.jpg" style="object-fit: cover; ">
-    </ion-slide>
-    <ion-slide >
-      <img src="assets/img/six.jpg" style="object-fit: cover; ">
-    </ion-slide>
-    <ion-slide >
-      <img src="assets/img/seven.jpg" style="object-fit: cover; ">
-    </ion-slide>
-    <ion-slide >
-      <img src="assets/img/eight.jpg" style="object-fit: cover; ">
-    </ion-slide>
-  </ion-slides>
-
-<!-- end of slides-->
+<div >
 
 
+  <!-- slides here-->
+
+  <ion-slides autoplay="5000" loop="true" speed="3000" pager >
+      <ion-slide >
+        <img src="assets/img/two.jpg" style="object-fit: cover;width:100%;">
+      </ion-slide>
+      <ion-slide >
+        <img src="assets/img/three.jpg" style="object-fit: cover; width:100%;">
+      </ion-slide>
+      <ion-slide >
+        <img src="assets/img/four.jpg" style="object-fit: cover; width:100%;">
+      </ion-slide>
+      <ion-slide >
+        <img src="assets/img/five.jpg" style="object-fit: cover; width:100%;">
+      </ion-slide>
+      <ion-slide >
+        <img src="assets/img/six.jpg" style="object-fit: cover; width:100%;">
+      </ion-slide>
+      <ion-slide >
+        <img src="assets/img/seven.jpg" style="object-fit: cover;width:100%; ">
+      </ion-slide>
+      <ion-slide >
+        <img src="assets/img/eight.jpg" style="object-fit: cover; width:100%;">
+      </ion-slide>
+    </ion-slides>
+
+  <!-- end of slides-->
+
+
+</div>
 
 
 
 
-  <ion-fab bottom right #fab>
-    <button ion-fab><ion-icon name="share"></ion-icon></button>
-    <ion-fab-list side="top">
 
-      <button ion-fab color="twitter" (click)="openSocial('Twitter', fab)"><ion-icon name="logo-twitter"></ion-icon></button>
-      <button ion-fab color="facebook" (click)="openSocial('Facebook', fab)"><ion-icon name="logo-facebook"></ion-icon></button>
-    </ion-fab-list>
-  </ion-fab>
+
+
 
 
 </ion-content>
@@ -108,19 +104,10 @@
           <ion-col style="background-color:#fd9b1f;">
             <div>
 
-              <!--
+
               <ion-icon name="logo-youtube" item-left color="light" ></ion-icon>
-              <p style="color:#ffffff">Program</p> -->
-              <ion-row>
-                <ion-col (click)="openNews()">
-                <ion-icon name="share" item-left color="light" style="font-size:30px;"></ion-icon>
-                <p style="color:white;">Stories</p>
-                </ion-col>
-                <ion-col (click)="openNews()">
-                <ion-icon name="logo-youtube" item-left color="light" style="font-size:30px;"> </ion-icon>
-                <p style="color:white;">Weather</p>
-                </ion-col>
-              </ion-row>
+              <p style="color:#ffffff">Program</p>
+
 
 
             </div>

@@ -1,11 +1,11 @@
 <ion-split-pane>
 
   <!-- logged out menu -->
-  <ion-menu id="loggedOutMenu" [content]="content">
+ <ion-menu id="loggedOutMenu" [content]="content">
 
     <ion-header>
       <ion-toolbar>
-        <ion-title>Menu</ion-title>
+        <ion-title>Sanyuka TV</ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -48,15 +48,19 @@
   <ion-menu id="loggedInMenu" [content]="content">
 
     <ion-header>
-      <ion-toolbar>
-        <ion-title>Menu</ion-title>
+      <ion-toolbar color="sanyuka">
+        <ion-title>Sanyuka TV</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content class="outer-content">
 
       <ion-list>
+        <ion-row>
 
+
+          <img src="assets/img/two.jpg" style="object-fit:cover;">
+        </ion-row>
         <ion-list-header>
           Sanyuka TV - Lets Connect Uganda
         </ion-list-header>
@@ -65,8 +69,9 @@
           {{p.title}}
         </button>
       </ion-list>
+      <hr>
 
-      <ion-list>
+      <!-- <ion-list>
         <ion-list-header>
           Account
         </ion-list-header>
@@ -84,7 +89,7 @@
           <ion-icon item-start name="hammer"></ion-icon>
           Show Tutorial
         </button>
-      </ion-list>
+      </ion-list> -->
 
     </ion-content>
 

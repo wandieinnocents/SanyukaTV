@@ -59,8 +59,8 @@ export class SchedulePage {
      };
 
      // http://www.sample-videos.com/
-     // this.streamingMedia.playVideo('http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4', options);
-    this.streamingMedia.playVideo('rtsp://10.132.67.136:1935/vod/sample.mp4', options);
+     this.streamingMedia.playVideo('http://174.138.84.246:1935/live/_definst_/myStream/playlist.m3u8', options);
+    // this.streamingMedia.playVideo('rtmp://streaming.toutech.net/live/radio.sdp', options);
 
 
    }
